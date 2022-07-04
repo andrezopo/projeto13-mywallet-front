@@ -30,7 +30,11 @@ function NewRecordScreen() {
       },
     };
 
-    const promise = axios.post("http://localhost:5000/records", body, config);
+    const promise = axios.post(
+      "https://git.heroku.com/andre-wallet.git/records",
+      body,
+      config
+    );
     promise.then((res) => {
       navigate("/records", { replace: true });
     });

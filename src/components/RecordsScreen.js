@@ -24,7 +24,10 @@ function RecordsScreen() {
       },
     };
 
-    const promise = axios.get("http://localhost:5000/records", config);
+    const promise = axios.get(
+      "https://git.heroku.com/andre-wallet.git/records",
+      config
+    );
     promise.then((res) => {
       setRecords([...res.data.records]);
       setRecordsTotal(res.data.recordsSum);
@@ -54,7 +57,10 @@ function RecordsScreen() {
         recordId,
       },
     };
-    const promise = axios.delete("http://localhost:5000/records", config);
+    const promise = axios.delete(
+      "https://git.heroku.com/andre-wallet.git/records",
+      config
+    );
     promise.then((res) => {
       navigate("/create-record", { replace: true });
       navigate("/records", { replace: true });

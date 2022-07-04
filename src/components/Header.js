@@ -13,7 +13,10 @@ function Header({ text, signOutButton }) {
     const body = {
       id: userId,
     };
-    const promise = axios.post("http://localhost:5000/sign-out", body);
+    const promise = axios.post(
+      "https://git.heroku.com/andre-wallet.git/sign-out",
+      body
+    );
     promise.then((res) => {
       navigate("/", { replace: true });
     });

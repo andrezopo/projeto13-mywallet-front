@@ -25,7 +25,10 @@ function SignInScreen() {
       email,
       password,
     };
-    const promise = axios.post("http://localhost:5000/sign-in", body);
+    const promise = axios.post(
+      "https://git.heroku.com/andre-wallet.git/sign-in",
+      body
+    );
     setDisable(true);
     promise.then((res) => {
       const response = res.data;

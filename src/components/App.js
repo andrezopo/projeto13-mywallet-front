@@ -23,7 +23,11 @@ function App() {
       },
     };
 
-    const promise = axios.put("http://localhost:5000/status", {}, config);
+    const promise = axios.put(
+      "https://git.heroku.com/andre-wallet.git/status",
+      {},
+      config
+    );
     promise.catch((err) => {
       console.log(err.response.data);
     });
