@@ -40,6 +40,32 @@ function RecordsScreen() {
     navigate("/create-record", { replace: true });
   }
 
+  function deleteRecord(recordId) {
+    const resultado = window.confirm(
+      "Tem certeza que deseja excluir esse registro?"
+    );
+    if (!resultado) {
+      return;
+    }
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        id: userId,
+        recordId,
+      },
+    };
+    console.log(recordId);
+    const promise = axios.delete("http://localhost:5000/records", config);
+    promise.then((res) => {
+      navigate("/create-record", { replace: true });
+      navigate("/records", { replace: true });
+    });
+    promise.catch((err) => {
+      alert(err.response.data);
+      navigate("/", { replace: true });
+    });
+  }
+
   function renderRecords() {
     if (records.length > 0) {
       const renderedRecords = records.map((record, index) => {
@@ -48,7 +74,10 @@ function RecordsScreen() {
             <div>
               <p>{record.date}</p> <h4>{record.description}</h4>
             </div>
-            <div>{parseFloat(record.amount).toFixed(2).replace(".", ",")}</div>
+            <div>
+              {parseFloat(record.amount).toFixed(2).replace(".", ",")}
+              <p onClick={() => deleteRecord(record._id)}>x</p>
+            </div>
           </RecordDiv>
         );
       });
@@ -128,7 +157,12 @@ const RecordDiv = styled.div`
   p {
     color: #c6c6c6;
     display: inline-block;
+  }
+  p:first-child {
     margin-right: 12px;
+  }
+  p:last-child {
+    margin-left: 12px;
   }
   h4 {
     color: #000000;
