@@ -31,7 +31,7 @@ function NewRecordScreen() {
     };
 
     const promise = axios.post(
-      "https://andre-wallet.herokuapp.com//records",
+      "https://andre-wallet.herokuapp.com/records",
       body,
       config
     );

@@ -14,7 +14,7 @@ function Header({ text, signOutButton }) {
       id: userId,
     };
     const promise = axios.post(
-      "https://andre-wallet.herokuapp.com//sign-out",
+      "https://andre-wallet.herokuapp.com/sign-out",
       body
     );
     promise.then((res) => {
