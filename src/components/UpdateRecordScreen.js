@@ -9,7 +9,7 @@ import StyledContent from "../styledComponents/StyledContent";
 import Header from "./Header";
 
 function UpdateRecordScreen() {
-  const { userId, token, recordType, updateToken, record } =
+  const { userId, token, recordType, updateToken, record, setRecordType } =
     useContext(UserContext);
   const navigate = useNavigate();
   const [disable, setDisable] = useState(false);
@@ -19,6 +19,7 @@ function UpdateRecordScreen() {
   useEffect(() => {
     setAmount(record.amount);
     setDescription(record.description);
+    setRecordType(record.type);
   }, []);
 
   function inputRecord(e) {
