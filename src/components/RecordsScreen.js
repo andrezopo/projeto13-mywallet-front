@@ -54,7 +54,6 @@ function RecordsScreen() {
         recordId,
       },
     };
-    console.log(recordId);
     const promise = axios.delete("http://localhost:5000/records", config);
     promise.then((res) => {
       navigate("/create-record", { replace: true });
