@@ -9,7 +9,7 @@ import StyledContent from "../styledComponents/StyledContent";
 import Header from "./Header";
 
 function RecordsScreen() {
-  const { name, userId, token, setRecordType, updateToken } =
+  const { name, userId, token, setRecordType, updateToken, setRecord } =
     useContext(UserContext);
   const [records, setRecords] = useState([]);
   const [recordsTotal, setRecordsTotal] = useState(0);
@@ -71,13 +71,19 @@ function RecordsScreen() {
     });
   }
 
+  function getRecord(record) {
+    setRecord(record);
+    navigate("/update", { replace: true });
+  }
+
   function renderRecords() {
     if (records.length > 0) {
       const renderedRecords = records.map((record, index) => {
         return (
           <RecordDiv key={index} type={record.type}>
             <div>
-              <p>{record.date}</p> <h4>{record.description}</h4>
+              <p>{record.date}</p>{" "}
+              <h4 onClick={() => getRecord(record)}>{record.description}</h4>
             </div>
             <div>
               {parseFloat(record.amount).toFixed(2).replace(".", ",")}

@@ -6,6 +6,7 @@ import SignInScreen from "./SignInScreen";
 import RecordsScreen from "./RecordsScreen";
 import NewRecordScreen from "./NewRecordScreen";
 import axios from "axios";
+import UpdateRecordScreen from "./UpdateRecordScreen";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -14,6 +15,7 @@ function App() {
   const [name, setName] = useState("");
   const [userId, setUserId] = useState("");
   const [recordType, setRecordType] = useState("");
+  const [record, setRecord] = useState({});
 
   function updateToken() {
     const config = {
@@ -50,6 +52,8 @@ function App() {
           recordType,
           setRecordType,
           updateToken,
+          record,
+          setRecord,
         }}
       >
         <Routes>
@@ -57,6 +61,7 @@ function App() {
           <Route path="/sign-up" element={<SignUpScreen />} />
           <Route path="/records" element={<RecordsScreen />} />
           <Route path="/create-record" element={<NewRecordScreen />} />
+          <Route path="/update" element={<UpdateRecordScreen />} />
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>
