@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Saira+Stencil+One&display=swap");
+
+.root * {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+}
