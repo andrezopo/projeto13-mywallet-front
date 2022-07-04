@@ -24,7 +24,7 @@ function App() {
     };
 
     const promise = axios.put(
-      "https://git.heroku.com/andre-wallet.git/status",
+      "https://andre-wallet.herokuapp.com//status",
       {},
       config
     );

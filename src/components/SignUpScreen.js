@@ -22,7 +22,7 @@ function SignUpScreen() {
       confirmPassword,
     };
     const promise = axios.post(
-      "https://git.heroku.com/andre-wallet.git/sign-up",
+      "https://andre-wallet.herokuapp.com//sign-up",
       body
     );
     setDisable(true);
