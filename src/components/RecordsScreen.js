@@ -25,7 +25,7 @@ function RecordsScreen() {
     };
 
     const promise = axios.get(
-      "https://andre-wallet.herokuapp.com/records",
+      `${process.env.REACT_APP_BACKEND_BASE_URL}/records`,
       config
     );
     promise.then((res) => {
@@ -58,7 +58,7 @@ function RecordsScreen() {
       },
     };
     const promise = axios.delete(
-      "https://andre-wallet.herokuapp.com/records",
+      `${process.env.REACT_APP_BACKEND_BASE_URL}/records`,
       config
     );
     promise.then((res) => {

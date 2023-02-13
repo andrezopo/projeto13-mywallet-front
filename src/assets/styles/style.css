@@ -3,4 +3,12 @@
 .root * {
   font-family: "Raleway", sans-serif;
   box-sizing: border-box;
+  min-height: 1vh;
+  height: 100%;
+}
+
+body {
+  min-height: 1vh;
+  box-sizing: border-box;
+  background-color: #8c11be;
 }

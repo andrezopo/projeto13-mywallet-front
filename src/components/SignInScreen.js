@@ -21,12 +21,13 @@ function SignInScreen() {
 
   function signIn(e) {
     e.preventDefault();
+
     const body = {
       email,
       password,
     };
     const promise = axios.post(
-      "https://andre-wallet.herokuapp.com/sign-in",
+      `${process.env.REACT_APP_BACKEND_BASE_URL}/sign-in`,
       body
     );
     setDisable(true);

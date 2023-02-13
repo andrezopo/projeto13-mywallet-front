@@ -14,7 +14,7 @@ function Header({ text, signOutButton }) {
       id: userId,
     };
     const promise = axios.post(
-      "https://andre-wallet.herokuapp.com/sign-out",
+      `${process.env.REACT_APP_BACKEND_BASE_URL}/sign-out`,
       body
     );
     promise.then((res) => {
@@ -47,6 +47,10 @@ const StyledDiv = styled.div`
   font-size: 26px;
   padding: 0 25px;
   color: #ffffff;
+
+  div {
+    padding-top: 30px;
+  }
 
   img {
     visibility: ${(props) => (props.signOutButton ? "initial" : "hidden")};

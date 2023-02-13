@@ -15,6 +15,8 @@ function SignUpScreen() {
 
   function register(e) {
     e.preventDefault();
+    console.log(process.env.REACT_APP_BACKEND_BASE_URL);
+
     const body = {
       email,
       password,
@@ -22,7 +24,7 @@ function SignUpScreen() {
       confirmPassword,
     };
     const promise = axios.post(
-      "https://andre-wallet.herokuapp.com/sign-up",
+      `${process.env.REACT_APP_BACKEND_BASE_URL}/sign-up`,
       body
     );
     setDisable(true);

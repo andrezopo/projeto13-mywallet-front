@@ -26,7 +26,7 @@ function App() {
     };
 
     const promise = axios.put(
-      "https://andre-wallet.herokuapp.com/status",
+      `${process.env.REACT_APP_BACKEND_BASE_URL}/status`,
       {},
       config
     );
