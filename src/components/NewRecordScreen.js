@@ -31,7 +31,7 @@ function NewRecordScreen() {
     };
 
     const promise = axios.post(
-      `${process.env.REACT_APP_BACKEND_BASE_URL}/records`,
+      `https://projeto13-mywallet-back-production-9bcc.up.railway.app/records`,
       body,
       config
     );

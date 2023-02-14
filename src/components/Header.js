@@ -14,7 +14,7 @@ function Header({ text, signOutButton }) {
       id: userId,
     };
     const promise = axios.post(
-      `${process.env.REACT_APP_BACKEND_BASE_URL}/sign-out`,
+      `https://projeto13-mywallet-back-production-9bcc.up.railway.app/sign-out`,
       body
     );
     promise.then((res) => {

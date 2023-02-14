@@ -24,7 +24,7 @@ function SignUpScreen() {
       confirmPassword,
     };
     const promise = axios.post(
-      `${process.env.REACT_APP_BACKEND_BASE_URL}/sign-up`,
+      `https://projeto13-mywallet-back-production-9bcc.up.railway.app/sign-up`,
       body
     );
     setDisable(true);

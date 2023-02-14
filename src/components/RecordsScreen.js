@@ -25,7 +25,7 @@ function RecordsScreen() {
     };
 
     const promise = axios.get(
-      `${process.env.REACT_APP_BACKEND_BASE_URL}/records`,
+      `https://projeto13-mywallet-back-production-9bcc.up.railway.app/records`,
       config
     );
     promise.then((res) => {
@@ -58,7 +58,7 @@ function RecordsScreen() {
       },
     };
     const promise = axios.delete(
-      `${process.env.REACT_APP_BACKEND_BASE_URL}/records`,
+      `https://projeto13-mywallet-back-production-9bcc.up.railway.app/records`,
       config
     );
     promise.then((res) => {
